@@ -1,0 +1,12 @@
+// 定义公共混入
+
+// 小圆球的公共类样式
+@mixin smallCircle($y){
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 50%;
+    box-shadow: 0px $y 1px 0px gray;
+    position: absolute;
+}

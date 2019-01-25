@@ -1,0 +1,466 @@
+/*引入css初始化样式文件 */
+@import '_base.scss';
+@import '_commonFun.scss';
+
+#header {
+    border-bottom: 2px solid #ddd;
+    text-align: center;
+
+    .container {
+        .row {
+            background-color: #fff;
+
+            >div {
+                font-size: 14px;
+                height: 50px;
+                line-height: 50px;
+
+                &~div {
+                    /*选中除第一个div外的所有div*/
+                    border-left: 1px solid #ddd;
+                }
+
+                >a.qrcode {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+
+                    >img {
+                        position: absolute;
+                        top: 49px;
+                        left: 50%;
+                        transform: translate(-50%);
+                        border: 1px solid #ddd;
+                        border-top: none;
+                        display: none;
+                        z-index: 99;
+                    }
+
+                    &:hover img {
+                        display: block;
+                    }
+                }
+
+                >a.btn-danger {
+                    padding: 3px 15px;
+                    background-color: #e92322;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+// 导航部分
+.mynav {
+    margin-bottom: 0;
+
+    .navbar-header {
+        .navbar-toggle {
+            margin-top: 23px;
+        }
+
+        .navbar-brand {
+            height: 80px;
+            line-height: 50px;
+            display: block;
+            font-size: 40px;
+
+            .wjs_icon_logo {
+                color: #e92322;
+            }
+
+            .wjs_icon_text {
+                color: #000;
+            }
+        }
+    }
+
+    .navbar-collapse {
+        .navbar-nav {
+            >li {
+                >a {
+                    display: block;
+                    font-size: 16px;
+                    line-height: 50px;
+                    color: #333;
+                }
+
+                &.active a,
+                a:hover,
+                a:focus {
+                    background-color: transparent;
+                    border-bottom: 3px solid #e92322;
+                }
+            }
+
+        }
+    }
+}
+
+// 轮播图区域 
+.slide {
+    .carousel-inner {
+        .item {
+            .imgMobile {
+                width: 100%;
+                display: block;
+
+                >img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            .imgPC {
+                width: 100%;
+                height: 380px;
+                display: block;
+                background-size: cover;
+                background-position: center;
+            }
+        }
+    }
+}
+
+// 用户链接
+.provideServers {
+    padding-top: 30px;
+
+    .container {
+        .row {
+
+            col-sm-6,
+            .col-md-4 {
+                margin-bottom: 20px;
+
+                >a {
+                    display: block;
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+
+                    .left {
+                        width: 40px;
+                        height: 44px;
+                        align-self: center;
+
+                        >span {
+                            font-size: 30px;
+                            vertical-align: middle;
+                        }
+                    }
+
+                    .right {
+                        flex: 1;
+
+                        h4 {
+                            margin: 5px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 预约
+.broadcast {
+    width: 100%;
+    height: 60px;
+    border: 1px solid #ccc;
+
+    .container>.row {
+        height: 100%;
+
+        >div {
+            height: 100%;
+            line-height: 60px;
+
+            >span {
+                font-size: 18px;
+            }
+
+            a:nth-of-type(1) {
+                color: #000;
+            }
+
+            a:nth-of-type(2) {
+                color: #f00;
+                border-bottom: 1px dashed #f00;
+            }
+        }
+    }
+}
+
+// 产品展示
+.products {
+    background-color: #eee;
+    padding: 20px 0;
+
+    .container {
+        .nav-tabs {
+            height: 80px;
+
+            >li {
+                padding-left: 15px;
+                padding-right: 15px;
+
+                >a {
+                    line-height: 50px;
+                    padding: 13px 15px;
+                    border: none;
+                    background-color: transparent;
+
+                    &:hover {
+                        background-color: transparent;
+                        border-bottom: 3px solid #f00;
+                    }
+                }
+
+                &.active {
+
+                    a,
+                    a:hover,
+                    a:focus {
+                        border: none;
+                        border-bottom: 3px solid #f00;
+                    }
+                }
+            }
+        }
+
+        .tab-content {
+
+            .tab-pane {
+                .row {
+                    .panelBox {
+                        height: 150px;
+                        display: flex;
+                        margin-top: 30px;
+
+                        .left {
+                            background-color: #fff;
+                            flex: 1;
+
+                            h4 {
+                                font-size: 16px;
+                                text-align: center;
+                            }
+
+                            .col-xs-6 {
+                                font-size: 13px;
+                                padding: 0 5px;
+                                margin-top: 10px;
+
+                                &:nth-of-type(even) {
+                                    text-align: right;
+                                }
+
+                                >p {
+                                    margin-bottom: 5px;
+                                }
+                            }
+                        
+                        }
+
+                        .right {
+                            background-color: #fff;
+                            width: 100px;
+                            border-left: 1px dashed #ddd;
+                            text-align: center;
+                            .tips{
+                                width: 100%;
+                                position: absolute;
+                                left: 50%;
+                                transform: translate(-50%);
+                                top: 18px;
+                                >span{
+                                    padding: 3px 1px;
+                                    border: 1px solid #f00;
+                                    &:nth-last-of-type(1){
+                                        border-color: blue;
+                                    }
+                                    &:hover{
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                            >p {
+                                line-height: 60px;
+                                margin: 0;
+                                font-size: 60px;
+                                font-weight: bold;
+                                margin-top: 35px;
+                                color: #f00;
+                                text-align: center;
+
+                                >sub {
+                                    bottom: 0;
+                                    font-size: 14px;
+                                }
+
+                                >span {}
+                            }
+
+                            position: relative;
+
+                            // 小圆球
+                            &::before {
+                                @include smallCircle(1px);
+                                top: -5px;
+                                left: -5px;
+                            }
+
+                            &::after {
+                                @include smallCircle(-1px);
+                                bottom: -5px;
+                                left: -5px;
+                            }
+                        }
+                    }
+                    .panelBox:nth-of-type(1){
+                        .left{
+                            color: #fff;
+                            background-color: #f00;
+                            &::before{
+                                content: '\e915';
+                                font-family: 'wjs';
+                                position: absolute;
+                                top: -6px;
+                                font-size: 26px;
+                            }
+                        }
+                        .right {
+                            color: #fff;
+                            background-color: #f00;
+                            p{
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+// 全球要闻
+.news{
+    padding: 20px 0;
+    .title{
+        text-align: center;
+        font-size: 30px;
+        padding: 10px 5px;
+        margin-bottom: 20px;
+        white-space: nowrap;
+        border-bottom: 2px solid #ddd;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            border: 1px solid #bbb;
+            bottom: -5px;
+            right: -10px;
+        }
+    }
+    .nav-tabs{
+        border-bottom: none;
+        position: relative;
+        // 利用媒体查询，根据当前终端大小，分别设置样式
+        @media screen and (max-width:768px){
+            // 768像素以下
+            >li{
+                width: 25%;
+                margin: 30px 0;
+            }
+        }
+        @media screen and (min-width:768px) and (max-width:992px){
+            // 768像素到992像素
+            >li{
+                margin: 30px;
+            }
+        }
+        @media screen and (min-width:992px){
+            >li{
+                margin-bottom: 60px;
+            }
+            >li:nth-last-of-type(1){
+                margin-block-end: 0;
+            }
+        }
+        >li{
+            float: left;
+            >a{
+                display: block;
+                width: 60px;
+                height: 60px;
+                background-color: #ddd;
+                border-radius: 50%;
+                border: none;
+                &:hover{
+                    background-color: #f00;
+                }
+                >span{
+                    font-size: 30px;
+                    color: #fff;
+                }
+            }
+            &.active a,a:hover,a:focus{
+                border: none;
+                background-color: #f00;
+            }
+        }
+        .line{
+            width: 1px;
+            height: 100%;
+            border: .5px dashed #f00;
+            position: absolute;
+            z-index: -1;
+            left: 30px;
+        }
+    }
+    .tab-content{
+        .allGlobal{
+            li{
+                line-height: 50px;
+                a{
+                    display: block;
+                    width: 100%;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+}
+
+// 底部区域
+#footer{
+    background-color: #eee;
+    padding-top: 30px;
+    text-align: center;
+    .title{
+        font-size: 30px;
+    }
+    .partner{
+        display: inline-block;
+        >li{
+            float: left;
+            >a{
+                font-size: 70px;
+            }
+            &~li{
+                margin-left: 20px;
+            }
+        }
+    }
+}
